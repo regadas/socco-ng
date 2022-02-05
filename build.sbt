@@ -83,20 +83,20 @@ lazy val socco =
           s"""
           set scalacOptions in examples := Seq(
             "-Xplugin:target/scala-${sv
-            .split("[.]")
-            .take(2)
-            .mkString(".")}/socco-ng-assembly-${soccoVersion}.jar",
+              .split("[.]")
+              .take(2)
+              .mkString(".")}/socco-ng-assembly-${soccoVersion}.jar",
             ${userStyle
-            .map(style =>
-              "\"-P:socco:style:examples/src/main/styles/" + style + ".css\","
-            )
-            .getOrElse("")}
+              .map(style =>
+                "\"-P:socco:style:examples/src/main/styles/" + style + ".css\","
+              )
+              .getOrElse("")}
             ${if (linkScala)
-            "\"-P:socco:package_scala:http://www.scala-lang.org/api/current/\","
-          else ""}
+              "\"-P:socco:package_scala:http://www.scala-lang.org/api/current/\","
+            else ""}
             "-P:socco:out:examples/target/html${userStyle
-            .map(style => s"/$style")
-            .getOrElse("")}",
+              .map(style => s"/$style")
+              .getOrElse("")}",
             "-P:socco:package_fs2:https://oss.sonatype.org/service/local/repositories/releases/archive/co/fs2/fs2-core_2.12/0.9.5/fs2-core_2.12-0.9.5-javadoc.jar/!",
             "-P:socco:package_io.circe:http://circe.github.io/circe/api/"
           )

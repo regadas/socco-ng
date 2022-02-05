@@ -373,7 +373,7 @@ class Socco(val global: Global) extends Plugin {
                   TypeAnnotation(
                     s"$link/$encodedMethodName",
                     s"${m.fullName}${m.info.toString
-                      .replaceAll(s"(=>\\s*)?\\Q$returnType\\E${'$'}", s": $returnType")}"
+                        .replaceAll(s"(=>\\s*)?\\Q$returnType\\E${'$'}", s": $returnType")}"
                   )
                 }
               }
@@ -461,8 +461,8 @@ class Socco(val global: Global) extends Plugin {
                 s"""<span class="identifier">${escape(token)}</span>"""
               case Identifier(Some(t)) =>
                 s"""<span class="identifier"><a target="doc" href="${t.link}" data-tooltip="<span>${t.display}</span>">${escape(
-                  token
-                )}</a></span>"""
+                    token
+                  )}</a></span>"""
               case _ => escape(token)
             }
 
@@ -529,17 +529,17 @@ class Socco(val global: Global) extends Plugin {
             <div class="code"></div>
           </section>
           ${blocks.map { case (comment, code) =>
-          s"""
+            s"""
               <section class="${if (comment.text.trim.matches("@\\w+"))
-            comment.text.trim.drop(1)
-          else ""}">
+                comment.text.trim.drop(1)
+              else ""}">
                 <div class="comment ${if (comment.text.trim.isEmpty) "empty"
-          else ""}">${formatComments(comment, packages)}</p></div>
+              else ""}">${formatComments(comment, packages)}</p></div>
                 <div class="code ${if (code.text.trim.isEmpty) "empty"
-          else ""}">${formatSourceCode(code, tokens)}</div>
+              else ""}">${formatSourceCode(code, tokens)}</div>
               </section>
             """
-        }.mkString}
+          }.mkString}
           <section id="footer">
             <div class="comment"></div>
             <div class="code"></div>
