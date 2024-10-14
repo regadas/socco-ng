@@ -10,6 +10,8 @@ jobs:
           distribution: "temurin"
           java-version: "11"
           cache: "sbt"
+      - name: Setup SBT
+        uses: sbt/setup-sbt@v1
       - run: 'sbt "++${{ matrix.scala}} compile"'
     strategy:
       matrix:
@@ -30,6 +32,8 @@ jobs:
           distribution: "temurin"
           java-version: "11"
           cache: "sbt"
+      - name: Setup SBT
+        uses: sbt/setup-sbt@v1
       - env:
           PGP_PASSPHRASE: "${{ secrets.PGP_PASSPHRASE }}"
           PGP_SECRET: "${{ secrets.PGP_SECRET }}"
