@@ -212,10 +212,10 @@ class Socco(val global: Global) extends Plugin {
                 case x if isLiteral(x)                        => NumberLiteral
                 case x if isIdentifier(x) => Identifier(None)
                 case ABSTRACT | CASE | CATCH | CLASS | DEF | DO | ELSE |
-                    EXTENDS | FINAL | FINALLY | FOR | IF | IMPLICIT |
-                    IMPORT | LAZY | NEW | MACRO | MATCH | OBJECT |
-                    PACKAGE | PRIVATE | PROTECTED | RETURN |
-                    SUPER | TRY | VAL | VAR | WHILE | YIELD | CASECLASS =>
+                    EXTENDS | FINAL | FINALLY | FOR | IF | IMPLICIT | IMPORT |
+                    LAZY | NEW | MACRO | MATCH | OBJECT | PACKAGE | PRIVATE |
+                    PROTECTED | RETURN | SUPER | TRY | VAL | VAR | WHILE |
+                    YIELD | CASECLASS =>
                   Keyword
                 case _ => Default
               }
