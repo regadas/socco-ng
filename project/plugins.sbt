@@ -1,4 +1,4 @@
-addSbtPlugin("org.scalameta" % "sbt-scalafmt" % "2.5.3")
+addSbtPlugin("org.scalameta" % "sbt-scalafmt" % "2.5.4")
 addSbtPlugin("com.thoughtworks.sbt-api-mappings" % "sbt-api-mappings" % "3.0.2")
 addSbtPlugin("com.github.sbt" % "sbt-ghpages" % "0.8.0")
 addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "2.3.0")
